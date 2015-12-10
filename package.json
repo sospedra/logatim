@@ -1,0 +1,15 @@
+{
+  "name": "logatim",
+  "version": "0.0.1",
+  "description": "Log with levels and colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-styles": "^2.1.0",
+    "loglevel": "^1.4.0"
+  }
+}
