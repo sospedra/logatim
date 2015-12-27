@@ -1,5 +1,6 @@
 {
   "name": "logatim",
+  "version": "1.0.0",
   "description": "Isomorphic logger which implements log levels and ANSI styles",
   "main": "dist/logatim.umd.min.js",
   "scripts": {
@@ -21,12 +22,18 @@
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
+    "cz-conventional-changelog": "^1.1.5",
     "parallel-webpack": "^1.0.0",
-    "webpack": "^1.12.9",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "webpack": "^1.12.9"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/edravis/logatim.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
