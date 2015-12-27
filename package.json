@@ -1,15 +1,27 @@
 {
   "name": "logatim",
-  "version": "0.0.1",
-  "description": "Log with levels and colors",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "Isomorphic logger which implements log levels and ANSI styles",
+  "main": "dist/logatim.umd.min.js",
   "scripts": {
-    "test": "tape test.js"
+    "start": "node index.js",
+    "test": "tape test/test-*.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js -p"
   },
-  "author": "",
+  "author": {
+    "name": "Rubén Sospedra",
+    "email": "hello@sospedra.me",
+    "url": "http://sospedra.me"
+  },
   "license": "ISC",
   "dependencies": {
-    "ansi-styles": "^2.1.0",
-    "loglevel": "^1.4.0"
+    "ansi-styles": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "parallel-webpack": "^1.0.0",
+    "webpack": "^1.12.9"
   }
 }
