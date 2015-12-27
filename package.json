@@ -1,19 +1,16 @@
 {
   "name": "logatim",
-  "version": "1.0.0",
   "description": "Isomorphic logger which implements log levels and ANSI styles",
   "main": "dist/logatim.umd.min.js",
   "scripts": {
     "start": "node index.js",
-    "test": "tape test/test-*.js",
-    "build": "node ./node_modules/webpack/bin/webpack.js -p",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "node_modules/.bin/tape test/test-*.js | node_modules/.bin/tap-spec",
+    "posttest": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
+    "build": "npm test && ./node_modules/.bin/webpack -p",
+    "changelog": "changelog edravis/logatim -m > CHANGELOG.md",
+    "semantic-release": "node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post"
   },
-  "author": {
-    "name": "Rubén Sospedra",
-    "email": "hello@sospedra.me",
-    "url": "http://sospedra.me"
-  },
+  "author": "Rubén Sospedra <hello@sospedra.me> (http://sospedra.me)",
   "license": "ISC",
   "dependencies": {
     "ansi-styles": "^2.1.0"
@@ -25,15 +22,42 @@
     "cz-conventional-changelog": "^1.1.5",
     "parallel-webpack": "^1.0.0",
     "semantic-release": "^4.3.5",
+    "snazzy": "^2.0.1",
+    "standard": "^5.4.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0",
     "webpack": "^1.12.9"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edravis/logatim.git"
+    "url": "git+https://github.com/edravis/logatim.git"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/edravis/logatim/issues"
+  },
+  "homepage": "https://github.com/edravis/logatim#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "logger",
+    "logging",
+    "log",
+    "console.log",
+    "colors",
+    "styles",
+    "levels",
+    "isomorphic",
+    "server",
+    "side",
+    "client",
+    "side",
+    "node",
+    "browser"
+  ]
 }

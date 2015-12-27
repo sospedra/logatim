@@ -22,6 +22,6 @@ const createConfig = options => ({
 
 const variants = createVariants({
   target: ['var', 'commonjs2', 'amd', 'umd']
-}, createConfig) 
+}, createConfig)
 
 module.exports = variants
