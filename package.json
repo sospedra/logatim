@@ -4,9 +4,11 @@
   "main": "dist/logatim.umd.min.js",
   "scripts": {
     "start": "node index.js",
+    "pretest": "./node_modules/.bin/webpack --config webpack.test.config.js",
     "test": "node_modules/.bin/tape test/test-*.js | node_modules/.bin/tap-spec",
-    "posttest": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
-    "build": "npm test && ./node_modules/.bin/webpack -p",
+    "posttest": "rm test/logatim.tmp.js && npm run standard",
+    "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
+    "build": "./node_modules/.bin/webpack -p",
     "changelog": "changelog edravis/logatim -m > CHANGELOG.md",
     "semantic-release": "node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post"
   },

@@ -1,7 +1,7 @@
 const test = require('tape')
-const logatim = require('../index.js')
+const logatim = require('./logatim.tmp.js')
 
-test('get/set methods', t => {
+test('get/set methods', function (t) {
   t.plan(4)
 
   // access to methods
@@ -16,7 +16,7 @@ test('get/set methods', t => {
   t.equal(logatim.getLevel(), 'INFO', '.setLevel() can change the current level')
 })
 
-test('methods less than the current level should be nooped (not available)', t => {
+test('methods less than the current level should be nooped (not available)', function (t) {
   t.plan(3)
 
   // different block scope
