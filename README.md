@@ -6,17 +6,28 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
+
 #### Logatim is an isomorphic logger which implements log levels and ANSI styles.
+
 
 Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authenitc debugger machine. And log for production **managing exactly what have** and what have not **to be outputed**.
 
+## Why?
+I've been codgin for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
 
-## Quick start
+- [ ] 1. **Free outputs**: it should be able to stream the logs anywhere and to multiples targets at the same time.
+- [x] 2. **Levels**: it should handle which levels should be printing or not.
+- [x] 3. **Styles**: as a very useful resource while developing, it should implements colors, bolds, etc.
+- [x] 4. **Cross-platform**: it should run in all the browsers and all the node versions. This includes the different Javascript specifications.
+- [x] 5. **Human-like**: it shouldn't have been any learning curve, nor complex configurations; just require and go.
+- [ ] 6. **Customizable**: it should accept addons and plugins in order to keep a light and powerful core which can be extended for specific situations.
+
+## Installation
 
 Choose one of the following options:
 
 1. Install it **via npm**: `npm install logatim --save`
-2. Download from the `dist` folder the **stand-alone specification** which fits better for you: `var`, `commonjs`, `umd` or `amd`.
+2. Download from the `dist` folder the **stand-alone specification** which fits better for you: `var`, `commonjs`, `umd` or `amd`. *Note that the installation via `npm` uses the umd pattern so should work in all the environments.*
 
 
 ## Features
@@ -112,6 +123,18 @@ npm test
 npm run build
 # send the PR, yaaay!
 ```
+
+### Todo list
+
+If you feel that the force is strong in Logatim keep an eye to the todo list and maybe you find something you're willing to make ;)
+
+* Add the possibility to stream the output elsewhere than the console.
+* Add the CI for client-side environments.
+* Add Logatim to other source providers: bower, a CDN, etc.
+* Write the technical in-code documentation.
+
+## Dat name, tho
+Logatim comes from a combination of the words **[log](https://en.wikipedia.org/wiki/Logfile)** and **[verbatim](https://en.wiktionary.org/wiki/verbatim)**. The first one is obviously referred to the cutten trunk... lol no, it's for the coding logfiles. And the second one is a Latin term that can be translated as *word for word*. So, the term Logatim could be loosely translated as **log for log**.
 
 ## License
 The code is available under the [ISC license](LICENSE.txt).

@@ -14,9 +14,7 @@
   },
   "author": "Rubén Sospedra <hello@sospedra.me> (http://sospedra.me)",
   "license": "ISC",
-  "dependencies": {
-    "ansi-styles": "^2.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
