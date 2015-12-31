@@ -3,6 +3,7 @@
   "description": "Isomorphic logger which implements log levels and ANSI styles",
   "main": "dist/logatim.umd.min.js",
   "scripts": {
+    "postinstall": "npm test",
     "start": "node index.js",
     "pretest": "./node_modules/.bin/webpack --config webpack.test.config.js",
     "test": "node_modules/.bin/tape test/test-*.js | node_modules/.bin/tap-spec",

@@ -7,7 +7,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 
-#### Logatim is an isomorphic logger which implements log levels and ANSI styles.
+#### Logatim is an isomorphic logger which implements log levels and ANSI 16 styles.
 
 
 Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authenitc debugger machine. And log for production **managing exactly what have** and what have not **to be outputed**.
@@ -33,7 +33,7 @@ Choose one of the following options:
 ## Features
 
 * Logatim has **colors**, **background colors** and **text styles**.
-* Implements the five **native console logging methods**: trace, debug, info, warn and error.
+* Implements the five **native console logging methods**: trace, debug, info, warn and error. And also the slient mode.
 * Production ready for **server and front-end sides**. Learn one, implement everywhere.
 * Super **lightweight**, weighs in at 1.1KB minified and gzipped.
 * Implements **human-like** code style: `logatim.green.bold.info('super sexy')`
@@ -61,7 +61,7 @@ The logatim API is tend to be extremly minimal and human-like. It has two differ
 
 ### Styles
 
-* Use the **[ANSI styles](https://en.wikipedia.org/wiki/ANSI_escape_code)** in a concatenable way:
+* Use the **[ANSI 16 styles](https://en.wikipedia.org/wiki/ANSI_escape_code)** in a concatenable way:
 
 ```es6
 const logatim = require('logatim')
@@ -76,11 +76,11 @@ logatim.info("I'm a boring log")
 
 ```
 
-* The **colors** available are: black, red, green, yellow, blue, magenta, cyan, white, gray, grey.
+* The **colors** available are: black, red, green, yellow, blue, magenta, cyan, white, gray and grey (fixing humans).
 
-* The **background colors** available are: bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite.
+* The **background colors** available are: bgBlack, bgRed, bgGreen, bgYellow, bgBlue, bgMagenta, bgCyan, bgWhite, bgGray and bgGrey.
 
-* The **styles** available are: reset, bold, dim, italic, underline, inverse, hidden, strikethrough.
+* The **sets** available are: bold, dim, italic, underline, blink, inverse, hidden, strikethrough (*Almost no browser [supports blink](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration#Browser_compatibility) and inverse is not supported when printing on the browser's console*).
 
 ### Levels
 * Use the five `console` native **logging methods** (aka levels):
@@ -90,9 +90,12 @@ const logatim = require('logatim')
 // sorted from bottom in the bubbling logging scale
 logatim.trace('Good for track pathways')
 logatim.info('Good while developing')
-logatim.debug('Good for find errors')
-logatim.warn('Good for production')
-logatim.error('Good for performance')
+
+// combine them, each log may differ depending on the channel
+logatim
+  .debug('Good for find errors')
+  .warn('Good for production')
+  .error('Good for performance')
 ```
 * And change the **current level** using the get/set methods:
 ```es6
@@ -104,18 +107,17 @@ logatim.setLevel('info')
 logatim.debug("I'll be printed") // because debug is greater than info
 ```
 
-* Leveling also ensure that **your logs don't break antyhing**, even if there's not a `console` object (I'm staring to you IE) it will slient fallback to the safest print possible.
+* Leveling also ensures that **your logs don't break anything**, even if there's not a `console` object (I'm staring at you IE) it will slient fallback to the safest print possible.
 
 
 ## Contributing
 
-Please feel free to raise issues, or make contributions. Remember that we follow standar code style and the continous integration pattern so any pull request should run the tests first.
+Please feel free to raise issues, make contributions or suggestions/requests. Remember that we follow [standard](https://github.com/feross/standard) code style and the continous integration pattern so any pull request should run the tests first.
 
 ```bash
 git clone https://github.com/edravis/logatim.git
 cd logatim
 npm install
-npm test
 # edit logatim
 
 # when done
@@ -132,8 +134,9 @@ If you feel that the force is strong in Logatim keep an eye to the todo list and
 * Add the CI for client-side environments.
 * Add Logatim to other source providers: bower, a CDN, etc.
 * Write the technical in-code documentation.
+* Allow custom prints depending on the level or globally.
 
-## Dat name, tho
+## *Dat name, tho*
 Logatim comes from a combination of the words **[log](https://en.wikipedia.org/wiki/Logfile)** and **[verbatim](https://en.wiktionary.org/wiki/verbatim)**. The first one is obviously referred to the cutten trunk... lol no, it's for the coding logfiles. And the second one is a Latin term that can be translated as *word for word*. So, the term Logatim could be loosely translated as **log for log**.
 
 ## License
@@ -141,5 +144,5 @@ The code is available under the [ISC license](LICENSE.txt).
 
 Handcrafted by [@sospedra\_r](http://twitter.com/sospedra\_r) / [sospedra.me](http://sospedra.me).
 
-With contributions from:
+With [contributions](https://github.com/edravis/logatim/graphs/contributors) from:
 * [be the first here, make a PR!]

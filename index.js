@@ -1,1 +1,1 @@
-module.exports = require('./lib/logatim')('')
+module.exports = require('./lib/logatim')()
