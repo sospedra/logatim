@@ -71,6 +71,9 @@ logatim.blue.bgYellow.bold.info("It's like reading english")
 // and the next print is completly independent; zero memories
 logatim.green.info('No background color nor bold here')
 
+// you can concat different styles
+logatim.red('R').green('G').blue('B').info()
+
 // also, of course you can print without any style
 logatim.info("I'm a boring log")
 
