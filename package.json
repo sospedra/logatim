@@ -10,7 +10,7 @@
     "posttest": "rm test/logatim.tmp.js && npm run standard",
     "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
     "build": "./node_modules/.bin/webpack -p",
-    "changelog": "changelog edravis/logatim -m > CHANGELOG.md",
+    "changelog": "changelog edravis/logatim all -m > CHANGELOG.md",
     "semantic-release": "node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post"
   },
   "author": "Rubén Sospedra <hello@sospedra.me> (http://sospedra.me)",
