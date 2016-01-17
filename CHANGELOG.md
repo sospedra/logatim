@@ -1,6 +1,9 @@
 2016-01-17
 ==========
 
+  * feat: Add the human-like concatenation
+    feat: Add human-like concatenation
+    fix [#10](https://github.com/edravis/logatim/issues/10)
   * docs: Update changelog
   * feat: Add raw function
     Return the current message output including the styles
