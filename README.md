@@ -7,8 +7,6 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm](https://img.shields.io/npm/dm/logatim.svg)](https://www.npmjs.org/package/awesome-badges)
 [![Code Climate](https://codeclimate.com/github/edravis/logatim/badges/gpa.svg)](https://codeclimate.com/github/edravis/logatim)
-[![GitHub stars](https://img.shields.io/github/stars/edravis/logatim.svg?style=social&label=Star)](https://github.com/bevacqua/awesome-badges)
-
 
 #### Logatim is an isomorphic logger which implements log levels and ANSI 16 styles.
 
@@ -52,7 +50,7 @@ Choose one of the following options:
 
 * Chrome
 * Edge
-* Firefox 
+* Firefox
 * Internet Explorer 8+
 * Opera
 * Vivaldi
