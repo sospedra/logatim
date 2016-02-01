@@ -1,6 +1,18 @@
+2016-02-01
+==========
+
+  * refactor: Remove unnecessary folders
+  * chore(Coverage): Added coveralls support
+
+2016-01-25
+==========
+
+  * feat: Support CSS/Browser styles
+
 2016-01-17
 ==========
 
+  * docs: Update changelog and update README.md
   * fix: Add detect-node dependency to package.json
   * docs: Update changelog
   * feat: Add the human-like concatenation
