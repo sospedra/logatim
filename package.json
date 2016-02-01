@@ -5,11 +5,11 @@
   "scripts": {
     "postinstall": "npm test",
     "start": "node index.js",
-    "pretest": "./node_modules/.bin/webpack --config webpack.test.config.js",
-    "test": "node_modules/.bin/tape test/test-*.js | node_modules/.bin/tap-spec",
-    "posttest": "rm test/logatim.tmp.js && npm run standard",
+    "test": "node_modules/.bin/tap test/test-*.js -R spec",
+    "posttest": "npm run standard",
+    "test-ci": "COVERALLS_REPO_TOKEN=XmHs8an1FvzAdfxAf81kEPQDFnpJ4j4mw node_modules/.bin/tap test/test-*.js --cov",
     "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
-    "build": "./node_modules/.bin/webpack -p",
+    "build": "node_modules/.bin/webpack -p && npm run test-ci",
     "changelog": "changelog edravis/logatim all -m > CHANGELOG.md",
     "semantic-release": "node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post"
   },
@@ -22,13 +22,13 @@
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
+    "coveralls": "^2.11.6",
     "cz-conventional-changelog": "^1.1.5",
     "parallel-webpack": "^1.0.0",
     "semantic-release": "^4.3.5",
     "snazzy": "^2.0.1",
     "standard": "^5.4.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.4.0",
+    "tap": "^5.4.2",
     "webpack": "^1.12.9"
   },
   "repository": {

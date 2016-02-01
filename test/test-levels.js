@@ -1,5 +1,5 @@
-const test = require('tape')
-const logatim = require('./logatim.tmp.js')
+const test = require('tap').test
+const logatim = require('../index')
 
 test('get/set methods', function (t) {
   t.plan(4)
