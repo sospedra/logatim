@@ -46,6 +46,9 @@
   "directories": {
     "test": "test"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "logger",
     "logging",
