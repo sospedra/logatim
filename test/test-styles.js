@@ -3,6 +3,7 @@ const logatim = require('../index')
 
 const dummies = {
   server: {
+    none: 'raw\u001b[49m\u001b[0m',
     single: '\u001b[31mraw\u001b[49m\u001b[0m',
     last: '\u001b[31m\u001b[34mraw\u001b[49m\u001b[0m',
     set: '\u001b[1m\u001b[32mraw\u001b[49m\u001b[0m',
@@ -11,6 +12,7 @@ const dummies = {
     concat: '\u001b[31mR\u001b[32mG\u001b[34mB\u001b[49m\u001b[0m'
   },
   browser: {
+    none: ['raw'],
     single: ['%craw', 'color: #e74c3c'],
     last: ['%craw', 'color: #e74c3c;color: #3498db'],
     set: ['%craw', 'font-weight: 900;color: #2ecc71'],
@@ -22,9 +24,10 @@ const dummies = {
   }
 }
 
-test('browser style', function (t) {
-  t.plan(7)
+test('server style', function (t) {
+  t.plan(8)
 
+  var none = logatim.raw('raw')
   var single = logatim.red.raw('raw')
   var last = logatim.red.blue.raw('raw')
   var set = logatim.bold.green.raw('raw')
@@ -32,6 +35,7 @@ test('browser style', function (t) {
   var combo = logatim.blue.bgRed.bold.strikethrough.bgGreen.white.raw('raw')
   var concat = logatim.red('R').green('G').blue('B').raw()
 
+  t.equal(none, dummies.server.none, 'can output logs without styles')
   t.equal(single, dummies.server.single, 'can render an ANSI color')
   t.equal(last, dummies.server.last, 'the last color wins')
   t.equal(set, dummies.server.set, 'can render set styles')
@@ -41,11 +45,12 @@ test('browser style', function (t) {
   t.notDeepEqual(concat, logatim, 'and always return a new logatim object')
 })
 
-test('server style', function (t) {
-  t.plan(9)
+test('browser style', function (t) {
+  t.plan(10)
 
   logatim.setEnv('browser')
 
+  var none = logatim.raw('raw')
   var single = logatim.red.raw('raw')
   var last = logatim.red.blue.raw('raw')
   var set = logatim.bold.green.raw('raw')
@@ -55,6 +60,7 @@ test('server style', function (t) {
   var combo = logatim.blue.bgRed.bold.strikethrough.bgGreen.white.raw('raw')
   var concat = logatim.red('R').green('G').blue('B').raw()
 
+  t.deepEqual(none, dummies.browser.none, 'can output logs without styles')
   t.deepEqual(single, dummies.browser.single, 'can render a CSS color')
   t.deepEqual(last, dummies.browser.last, 'the last color wins')
   t.deepEqual(set, dummies.browser.set, 'can render set styles')
