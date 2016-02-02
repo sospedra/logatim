@@ -15,6 +15,7 @@ Finally you can use the same logger for the **server and client side** of your a
 
 ## Demo
 If you're excited about this and want to try it right now you have 2 options:
+
 1. Copy the [dist/logatim.umd.min.js](dist/logatim.umd.min.js) and paste it on the browser console.
 2. Access to our [official sandbox at Runnable](http://code.runnable.com/VrCg6ISZBxFE6SMu/).
 
