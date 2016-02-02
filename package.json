@@ -47,7 +47,9 @@
     "test": "test"
   },
   "files": [
-    "lib"
+    "lib",
+    "test",
+    "dist"
   ],
   "keywords": [
     "logger",
