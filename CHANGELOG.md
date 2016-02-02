@@ -1,6 +1,8 @@
 2016-02-02
 ==========
 
+  * docs: Update changelog
+  * fix: Add dist to package.json file
   * fix: Add files to package.json so the new npm install won't use tape anymore
   * Merge branch 'master' of https://github.com/edravis/logatim
   * chore: Remove post install script
