@@ -14,7 +14,7 @@
 Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authenitc debugger machine. And log for production **managing exactly what have** and what have not **to be outputed**.
 
 ## Why?
-I've been codgin for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
+I've been coding for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
 
 - [ ] 1. **Free outputs**: it should be able to stream the logs anywhere and to multiples targets at the same time.
 - [x] 2. **Levels**: it should handle which levels should be printing or not.
