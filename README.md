@@ -13,6 +13,11 @@
 
 Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authentic debugger machine. And log for production **managing exactly what have** and what have not **to be outputted**.
 
+## Demo
+If you're excited about this and want to try it right now you have 2 options:
+1. Copy the [dist/logatim.umd.min.js](dist/logatim.umd.min.js) and paste it on the browser console.
+2. Access to our [official sandbox at Runnable](http://code.runnable.com/VrCg6ISZBxFE6SMu/).
+
 ## Why?
 I've been coding for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
 

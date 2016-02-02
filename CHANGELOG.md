@@ -1,10 +1,16 @@
 2016-02-02
 ==========
 
+  * Merge branch 'master' of https://github.com/edravis/logatim
+  * fix: When leveling the logatim variable become undefined. Now it's strongly binded.
+  * Merge pull request [#16](https://github.com/edravis/logatim/issues/16) from eanplatter/master
+    Fix typos in README
+  * chore: Added npm run push
   * docs: Update changelog
+  * fix: Don't break when outputing without styles. Nor server nor browser.
+  * Fix typos in README
   * fix: Add dist to package.json file
   * fix: Add files to package.json so the new npm install won't use tape anymore
-  * Merge branch 'master' of https://github.com/edravis/logatim
   * chore: Remove post install script
   * Merge pull request [#13](https://github.com/edravis/logatim/issues/13) from brunopgalvao/patch-1
     Update README.md
