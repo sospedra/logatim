@@ -1,6 +1,18 @@
+2016-02-02
+==========
+
+  * fix: Add files to package.json so the new npm install won't use tape anymore
+  * Merge branch 'master' of https://github.com/edravis/logatim
+  * chore: Remove post install script
+  * Merge pull request [#13](https://github.com/edravis/logatim/issues/13) from brunopgalvao/patch-1
+    Update README.md
+  * Update README.md
+
 2016-02-01
 ==========
 
+  * chore: Run the Travis test only for node 4+
+  * docs: Update changelog
   * refactor: Remove unnecessary folders
   * chore(Coverage): Added coveralls support
 
