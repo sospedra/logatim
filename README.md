@@ -11,7 +11,7 @@
 #### Logatim is an isomorphic logger which implements log levels and ANSI 16 styles.
 
 
-Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authenitc debugger machine. And log for production **managing exactly what have** and what have not **to be outputed**.
+Finally you can use the same logger for the **server and client side** of your applications. Log for developers using **colors, underlines, etc.** in order to transform the terminal in an authentic debugger machine. And log for production **managing exactly what have** and what have not **to be outputted**.
 
 ## Why?
 I've been coding for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
@@ -34,7 +34,7 @@ Choose one of the following options:
 ## Features
 
 * Logatim has **colors**, **background colors** and **text styles**.
-* Implements the five **native console logging methods**: trace, debug, info, warn and error. And also the slient mode.
+* Implements the five **native console logging methods**: trace, debug, info, warn and error. And also the silent mode.
 * Production ready for **server and front-end sides**. Learn one, implement everywhere.
 * Super **lightweight**, weighs in at 1.1KB minified and gzipped.
 * Implements **human-like** code style: `logatim.green.bold.info('super sexy')`
@@ -58,7 +58,7 @@ Choose one of the following options:
 
 
 ## Usage
-The logatim API is tend to be extremly minimal and human-like. It has two different kind of options: the styling and the leveling ones. Logatim consists in:
+The logatim API is tend to be extremely minimal and human-like. It has two different kind of options: the styling and the leveling ones. Logatim consists in:
 
 ### Styles
 
@@ -69,7 +69,7 @@ const logatim = require('logatim')
 
 logatim.blue.bgYellow.bold.info("It's like reading english")
 
-// and the next print is completly independent; zero memories
+// and the next print is completely independent; zero memories
 logatim.green.info('No background color nor bold here')
 
 // you can concat different styles
@@ -111,7 +111,7 @@ logatim.setLevel('info')
 logatim.debug("I'll be printed") // because debug is greater than info
 ```
 
-* Leveling also ensures that **your logs don't break anything**, even if there's not a `console` object (I'm staring at you IE) it will slient fallback to the safest print possible.
+* Leveling also ensures that **your logs don't break anything**, even if there's not a `console` object (I'm staring at you IE) it will silent fallback to the safest print possible.
 
 
 ## Contributing
