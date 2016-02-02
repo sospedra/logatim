@@ -9,6 +9,7 @@
     "test-ci": "COVERALLS_REPO_TOKEN=XmHs8an1FvzAdfxAf81kEPQDFnpJ4j4mw node_modules/.bin/tap test/test-*.js --cov",
     "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
     "build": "node_modules/.bin/webpack -p && npm run test-ci",
+    "push": "npm test && npm run build && git add -A && git cz && git push",
     "changelog": "changelog edravis/logatim all -m > CHANGELOG.md",
     "semantic-release": "node_modules/.bin/semantic-release pre && npm publish && node_modules/.bin/semantic-release post"
   },
