@@ -28,3 +28,23 @@ test('methods less than the current level should be nooped (not available)', fun
   // lesser methods should NOT be available (nooped)
   t.equal(logatim.trace.name, 'noop', '.trace() is less than INFO an is NOT available (nooped)')
 })
+
+test('switch levels operations', function (t) {
+  t.plan(1)
+
+  try {
+    // output something change the level and output again
+    logatim.warn('IGNORE: first one')
+    logatim.info('IGNORE: lower level')
+    logatim.setLevel('error')
+    logatim.warn('IGNORE: no output')
+    logatim.error('IGNORE: highest level')
+    logatim.setLevel('info')
+    logatim.info('IGNORE: last one')
+    logatim.info('IGNORE: reply')
+
+    t.pass('can level without breaking')
+  } catch (e) {
+    t.fail(e)
+  }
+})
