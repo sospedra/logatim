@@ -1,0 +1,190 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
+///
+/// Fractal by HTML5 UP
+/// html5up.net | @n33co
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Spotlight */
+
+	// jquery resizable hack
+	.spotlight[data-benefit="levels"] .demo[style] {
+		left: 0 !important;
+	}
+
+	.fake-controllers {
+		display: block;
+		width: 30%;
+		height: 13px;
+		line-height: 8px;
+		text-align: left;
+		padding-left: 5px;
+
+		i {
+			width: 7px;
+			height: 7px;
+			margin-right: -4px;
+			display: inline-block;
+			border-radius: 100%;
+
+			&.red {
+				background-color: #ff6159;
+			}
+			&.yellow {
+				background-color: #ffc12f;
+			}
+			&.green {
+				background-color: #29cd42;
+			}
+		}
+	}
+
+	.spotlight {
+		@include vendor('display', 'flex');
+		@include vendor('align-items', 'center');
+		margin: 0 0 _size(element-margin) 0;
+
+		.demo {
+			width: 50%;
+			margin: 0 (_size(element-margin) * 1.5) 0 0;
+			display: block;
+			max-width: 60ch;
+			background-color: #ddd;
+
+			.asciinema-player {
+				vertical-align: bottom;
+			}
+
+			img {
+				display: block;
+				border-radius: 100%;
+				width: 100%;
+			}
+		}
+
+		.content {
+			width: 50%;
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:nth-child(2n) {
+			@include vendor('flex-direction', 'row-reverse');
+
+			.demo {
+				margin: 0 0 0 (_size(element-margin) * 1.5);
+			}
+
+			.content {
+				text-align: right;
+			}
+		}
+
+		// Small.
+			@include breakpoint(small) {
+
+				// Landscape.
+					@include orientation(landscape) {
+						.demo {
+							margin: 0 _size(element-margin) 0 0;
+						}
+
+						&:nth-child(2n) {
+							.demo {
+								margin: 0 0 0 _size(element-margin);
+							}
+						}
+					}
+
+				// Portrait.
+					@include orientation(portrait) {
+						@include vendor('flex-direction', 'column !important');
+
+						.demo {
+							width: 100%;
+							max-width: 60%;
+							margin: 0 0 _size(element-margin) 0 !important;
+						}
+
+						.content {
+							width: 100%;
+							text-align: center !important;
+						}
+					}
+
+			}
+
+	}
+
+// ismorphism
+.spotlight[data-benefit="isomorphic"] {
+	display: block;
+	text-align: center;
+
+	.content, .demo-holder {
+		width: 100%;
+	}
+
+	.demo-holder {
+		position: relative;
+		margin-top: 1em;
+
+		&:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+		}
+	}
+
+	.demo {
+		margin: 0 auto;
+
+		&.server {
+			float: left;
+			z-index: 99;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			overflow: visible;
+		}
+
+		&.server[style] {
+			height: auto !important;
+		}
+
+		&.browser {
+			width: auto;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	#resize-cursor {
+		background-color: #ffc700;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: calc(100% + 6px);
+		margin-top: -3px;
+		width: 6px;
+		cursor: col-resize;
+		border-radius: 4px;
+		z-index: 999;
+
+		&:after {
+			content: "";
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: calc(50% - 10px);
+			top: calc(50% - 10px);
+			border-radius: 50%;
+			background-color: #333;
+			border: 6px solid #ffc700;
+		}
+	}
+}

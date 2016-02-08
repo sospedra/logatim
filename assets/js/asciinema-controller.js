@@ -1,0 +1,35 @@
+(function ($) {
+  var getOpts = function (poster, theme) {
+    return {
+      height: 15,
+      loop: 1,
+      poster: poster || 1,
+      theme: theme || 'asciinema'
+    }
+  }
+
+  // make the spotlight demos resizable
+  $('.spotlight[data-benefit="colors"] .demo').resizable({
+    handles: 'e'
+  })
+
+  $('.spotlight[data-benefit="levels"] .demo').resizable({
+    handles: 'w'
+  })
+
+  $('.spotlight[data-benefit="isomorphic"] .demo.server').resizable({
+    handles: {
+      'e': '#resize-cursor'
+    }
+  })
+
+  // load the asciinema videos into the demos
+  asciinema_player.core
+    .CreatePlayer('asciinema-colors', '/assets/asciinema/colors.json', getOpts(20))
+  asciinema_player.core
+    .CreatePlayer('asciinema-levels', '/assets/asciinema/colors.json', getOpts(20))
+  asciinema_player.core
+    .CreatePlayer('asciinema-iso-browser', '/assets/asciinema/colors.json', getOpts(20, 'solarized-light'))
+  asciinema_player.core
+    .CreatePlayer('asciinema-iso-server', '/assets/asciinema/colors.json', getOpts(20))
+})(jQuery)
