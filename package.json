@@ -20,11 +20,10 @@
     "watch-images": "node_modules/.bin/nodemon -w images -x 'npm run images'",
     "watch": "npm run watch-html & npm run watch-css & npm run watch-js & npm run watch-images",
     "copy-files": "cp -R assets/asciinema public/asciinema & cp assets/js/ie/* public/js/ie/ & cp -R assets/js/vendor/* public/js",
-    "predeploy": "git checkout gh-pages",
-    "deploy-import": "git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
-    "deploy-push": "git add -A && git commit -m 'Deploy website' && git push",
-    "deploy": "npm run deploy-import && npm run deploy-push",
-    "postdeploy": "git checkout gh-pages-develop"
+    "pre-deploy": "git checkout gh-pages",
+    "deploy-import": "npm run pre-deploy && git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
+    "deploy-push": "git add -A && git commit -m 'Deploy website' && git push && git checkout gh-pages-develop",
+    "deploy": "npm run deploy-import && npm run deploy-push"
   },
   "repository": {
     "type": "git",
