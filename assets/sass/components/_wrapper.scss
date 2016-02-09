@@ -11,7 +11,7 @@
 /* Wrapper */
 
 	.wrapper {
-		@include padding(4.5em, 0);
+		@include padding(4.5em, 4.5em);
 		background-color: _palette(bg);
 		border-bottom: solid (_size(border-width) * 2) lighten(_palette(border), 3);
 

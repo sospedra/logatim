@@ -16,6 +16,22 @@
 		}
 	}
 
+	section#demo .terminal {
+		width: 100%;
+		background-color: #ddd;
+		border-radius: 3px;
+		padding: 0;
+
+		.fake-controllers {
+			line-height: 11px;
+		}
+
+		iframe {
+			width: 100%;
+			vertical-align: bottom;
+		}
+	}
+
 	header {
 		p {
 			position: relative;

@@ -4,14 +4,11 @@
 		<title>Logatim</title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/asciinema-player.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.structure.min.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/terminal.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="css/bundle.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 	</head>
 
 	<body id="top">
@@ -107,8 +104,13 @@
 					</p>
 				</header>
 				<section>
-					<div class="content">
-						<div id="js-logatim-sandbox"></div>
+					<div class="terminal">
+						<span class="fake-controllers">
+							<i class="red"></i>
+							<i class="yellow"></i>
+							<i class="green"></i>
+						</span>
+						<iframe src="http://services-a9168712-a7ea-49be-9627-08cacabcb304.runnablecodesnippets.com/static/term.html"></iframe>
 					</div>
 				</section>
 			</section>
@@ -124,16 +126,8 @@
 		</footer>
 
 		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery-ui.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/asciinema-player.js"></script>
-		<script src="assets/js/asciinema-controller.js"></script>
-		<script src="assets/js/terminal.min.js"></script>
-		<script src="assets/js/terminal-controller.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="assets/js/main.js"></script>
+		<!--[if lte IE 8]><script src="js/respond.min.js"></script><![endif]-->
+		<script src="js/asciinema-player.js"></script>
+		<script src="js/app.min.js"></script>
 	</body>
 </html>

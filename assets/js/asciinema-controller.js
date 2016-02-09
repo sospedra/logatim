@@ -1,4 +1,6 @@
-(function ($) {
+const $ = require('jquery')
+
+module.exports = (function () {
   var getOpts = function (poster, theme) {
     return {
       height: 15,
@@ -25,11 +27,11 @@
 
   // load the asciinema videos into the demos
   asciinema_player.core
-    .CreatePlayer('asciinema-colors', '/assets/asciinema/colors.json', getOpts(20))
+    .CreatePlayer('asciinema-colors', '/asciinema/colors.json', getOpts(20))
   asciinema_player.core
-    .CreatePlayer('asciinema-levels', '/assets/asciinema/colors.json', getOpts(20))
+    .CreatePlayer('asciinema-levels', '/asciinema/colors.json', getOpts(20))
   asciinema_player.core
-    .CreatePlayer('asciinema-iso-browser', '/assets/asciinema/colors.json', getOpts(20, 'solarized-light'))
+    .CreatePlayer('asciinema-iso-browser', '/asciinema/colors.json', getOpts(20, 'solarized-light'))
   asciinema_player.core
-    .CreatePlayer('asciinema-iso-server', '/assets/asciinema/colors.json', getOpts(20))
-})(jQuery)
+    .CreatePlayer('asciinema-iso-server', '/asciinema/colors.json', getOpts(20))
+})()

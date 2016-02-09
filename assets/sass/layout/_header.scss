@@ -15,7 +15,7 @@
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
 		@include vendor('justify-content', 'center');
-		background-image: url('images/polygon.svg');
+		background-image: url('../images/polygon.svg');
 		background-position: bottom center;
 		background-attachment: fixed, fixed;
 		background-size: auto, cover;
@@ -68,7 +68,7 @@
 
 		// Large.
 			@include breakpoint(large) {
-				background-image: url('images/polygon.svg');
+				background-image: url('../images/polygon.svg');
 			}
 
 		// Medium.
@@ -101,7 +101,7 @@
 
 		// Small.
 			@include breakpoint(small) {
-				background-image: url('images/polygon.svg');
+				background-image: url('../images/polygon.svg');
 
 				h1 {
 					font-size: 2em;
