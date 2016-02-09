@@ -1,11 +1,12 @@
 const $ = require('jquery')
 
 module.exports = (function () {
-  var getOpts = function (poster, theme) {
+  var getOpts = function (poster, autoPlay, theme) {
     return {
       height: 15,
       loop: 1,
       poster: poster || 1,
+      autoPlay: autoPlay || 0,
       theme: theme || 'asciinema'
     }
   }
@@ -21,17 +22,18 @@ module.exports = (function () {
 
   $('.spotlight[data-benefit="isomorphic"] .demo.server').resizable({
     handles: {
-      'e': '#resize-cursor'
+      'e': '#resize-cursor',
+      minWidth: 200
     }
   })
 
   // load the asciinema videos into the demos
   asciinema_player.core
-    .CreatePlayer('asciinema-colors', '/asciinema/colors.json', getOpts(20))
+    .CreatePlayer('asciinema-colors', 'asciinema/colors.json', getOpts(20))
   asciinema_player.core
-    .CreatePlayer('asciinema-levels', '/asciinema/colors.json', getOpts(20))
+    .CreatePlayer('asciinema-levels', 'asciinema/colors.json', getOpts(20))
   asciinema_player.core
-    .CreatePlayer('asciinema-iso-browser', '/asciinema/colors.json', getOpts(20, 'solarized-light'))
+    .CreatePlayer('asciinema-iso-browser', 'asciinema/colors.json', getOpts(20, 1, 'solarized-light'))
   asciinema_player.core
-    .CreatePlayer('asciinema-iso-server', '/asciinema/colors.json', getOpts(20))
+    .CreatePlayer('asciinema-iso-server', 'asciinema/colors.json', getOpts(20, 1))
 })()

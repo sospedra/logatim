@@ -7,7 +7,7 @@
     "postinstall": "mkdir public && mkdir public/css && mkdir public/js && mkdir public/js/ie",
     "start": "npm run watch & npm run copy-files & http-server -c-1 public",
     "html": "node_modules/.bin/html-minifier -c html.config.json index.html > public/index.html",
-    "js": "node_modules/.bin/webpack",
+    "js": "node_modules/.bin/webpack -p",
     "images": "node_modules/.bin/imagemin images/* public/images",
     "css": "npm run cssmain && npm run cssie8 && npm run cssie9",
     "cssmain": "node_modules/.bin/node-sass assets/sass/main.scss | node_modules/.bin/csso > public/css/bundle.css",
@@ -19,7 +19,12 @@
     "watch-js": "node_modules/.bin/nodemon -w assets/js/ -x 'npm run js'",
     "watch-images": "node_modules/.bin/nodemon -w images -x 'npm run images'",
     "watch": "npm run watch-html & npm run watch-css & npm run watch-js & npm run watch-images",
-    "copy-files": "cp -R assets/asciinema public/asciinema & cp assets/js/ie/* public/js/ie/ & cp -R assets/js/vendor/* public/js"
+    "copy-files": "cp -R assets/asciinema public/asciinema & cp assets/js/ie/* public/js/ie/ & cp -R assets/js/vendor/* public/js",
+    "predeploy": "git checkout gh-pages",
+    "deploy-import": "git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
+    "deploy-push": "git add -A && git commit -m 'Deploy website' && git push",
+    "deploy": "npm run deploy-import && npm run deploy-push",
+    "postdeploy": "git checkout gh-pages-develop"
   },
   "repository": {
     "type": "git",
@@ -37,6 +42,7 @@
     "logatim": "^0.4.4"
   },
   "devDependencies": {
+    "csso": "^1.5.4",
     "html-minifier": "^1.1.1",
     "imagemin-cli": "^2.1.0",
     "node-sass": "^3.4.2",
