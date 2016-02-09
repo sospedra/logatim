@@ -21,7 +21,7 @@
     "watch": "npm run watch-html & npm run watch-css & npm run watch-js & npm run watch-images",
     "copy-files": "cp -R assets/asciinema public/asciinema & cp assets/js/ie/* public/js/ie/ & cp -R assets/js/vendor/* public/js",
     "pre-deploy": "git checkout gh-pages",
-    "deploy-import": "npm run pre-deploy && git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
+    "deploy-import": "npm run pre-deploy && rm -rf * && git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
     "deploy-push": "git add -A && git commit -m 'Deploy website' && git push && git checkout gh-pages-develop",
     "deploy": "npm run deploy-import && npm run deploy-push"
   },
