@@ -22,7 +22,7 @@
     "watch:css": "nodemon -e scss -x 'npm run css'",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -s",
     "predeploy": "npm run build",
-    "deploy": "git push origin `git subtree split --prefix public master`:gh-pages --force"
+    "deploy": "git push origin `git subtree split --prefix public gh-pages-develop`:gh-pages --force"
   },
   "repository": {
     "type": "git",
