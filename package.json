@@ -4,26 +4,23 @@
   "description": "Logatim website",
   "main": "index.js",
   "scripts": {
-    "postinstall": "mkdir public && mkdir public/css && mkdir public/js && mkdir public/js/ie",
-    "start": "npm run watch & npm run copy-files & http-server -c-1 public",
-    "html": "node_modules/.bin/html-minifier -c html.config.json index.html > public/index.html",
-    "js": "node_modules/.bin/webpack -p",
-    "images": "node_modules/.bin/imagemin images/* public/images",
+    "postinstall": "mkdirp public/css public/js/ie",
+    "start": "npm run watch & npm run cp & http-server -c-1 public",
+    "html": "html-minifier -c html.config.json index.html > public/index.html",
+    "js": "webpack -p",
+    "images": "imagemin images/* public/images",
     "css": "npm run cssmain && npm run cssie8 && npm run cssie9",
-    "cssmain": "node_modules/.bin/node-sass assets/sass/main.scss | node_modules/.bin/csso > public/css/bundle.css",
-    "cssie8": "node_modules/.bin/node-sass assets/sass/ie8.scss | node_modules/.bin/csso > public/css/ie8.css",
-    "cssie9": "node_modules/.bin/node-sass assets/sass/ie9.scss | node_modules/.bin/csso > public/css/ie9.css",
-    "build": "npm run html & npm run js & npm run css & npm run images & npm run copy-files",
-    "watch-html": "node_modules/.bin/nodemon -e html -i public -x 'npm run html'",
-    "watch-css": "node_modules/.bin/nodemon -e scss -x 'npm run css'",
-    "watch-js": "node_modules/.bin/nodemon -w assets/js/ -x 'npm run js'",
-    "watch-images": "node_modules/.bin/nodemon -w images -x 'npm run images'",
+    "cssmain": "node-sass assets/sass/main.scss | csso > public/css/bundle.css",
+    "cssie8": "node-sass assets/sass/ie8.scss | csso > public/css/ie8.css",
+    "cssie9": "node-sass assets/sass/ie9.scss | csso > public/css/ie9.css",
+    "build": "npm run html & npm run js & npm run css & npm run images & npm run cp",
+    "watch-html": "nodemon -e html -i public -x 'npm run html'",
+    "watch-css": "nodemon -e scss -x 'npm run css'",
+    "watch-js": "nodemon -w assets/js/ -x 'npm run js'",
+    "watch-images": "nodemon -w images -x 'npm run images'",
     "watch": "npm run watch-html & npm run watch-css & npm run watch-js & npm run watch-images",
-    "copy-files": "cp -R assets/asciinema public/asciinema & cp assets/js/ie/* public/js/ie/ & cp -R assets/js/vendor/* public/js",
-    "pre-deploy": "git checkout gh-pages",
-    "deploy-import": "npm run pre-deploy && rm -rf * && git checkout gh-pages-develop -- public && mv public/* ./ && rm -rf public",
-    "deploy-push": "git add -A && git commit -m 'Deploy website' && git push && git checkout gh-pages-develop",
-    "deploy": "npm run deploy-import && npm run deploy-push"
+    "cp": "copyfiles -R assets/asciinema public/asciinema & copyfiles assets/js/ie/* public/js/ie/",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -s"
   },
   "repository": {
     "type": "git",
@@ -41,9 +38,11 @@
     "logatim": "^0.4.4"
   },
   "devDependencies": {
+    "conventional-changelog-cli": "^1.1.1",
     "csso": "^1.5.4",
     "html-minifier": "^1.1.1",
     "imagemin-cli": "^2.1.0",
+    "mkdirp": "^0.5.1",
     "node-sass": "^3.4.2",
     "webpack": "^1.12.13"
   }

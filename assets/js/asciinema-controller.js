@@ -11,6 +11,16 @@ module.exports = (function () {
     }
   }
 
+  // load the asciinema videos into the demos
+  asciinema_player.core
+    .CreatePlayer('asciinema-colors', 'asciinema/colors.json', getOpts(20, 0))
+  asciinema_player.core
+    .CreatePlayer('asciinema-levels', 'asciinema/colors.json', getOpts(20, 0))
+  asciinema_player.core
+    .CreatePlayer('asciinema-iso-browser', 'asciinema/colors.json', getOpts(20, 1, 'solarized-light'))
+  asciinema_player.core
+    .CreatePlayer('asciinema-iso-server', 'asciinema/colors.json', getOpts(20, 1))
+
   // make the spotlight demos resizable
   $('.spotlight[data-benefit="colors"] .demo').resizable({
     handles: 'e'
@@ -22,18 +32,7 @@ module.exports = (function () {
 
   $('.spotlight[data-benefit="isomorphic"] .demo.server').resizable({
     handles: {
-      'e': '#resize-cursor',
-      minWidth: 200
+      'e': '#resize-cursor'
     }
   })
-
-  // load the asciinema videos into the demos
-  asciinema_player.core
-    .CreatePlayer('asciinema-colors', 'asciinema/colors.json', getOpts(20))
-  asciinema_player.core
-    .CreatePlayer('asciinema-levels', 'asciinema/colors.json', getOpts(20))
-  asciinema_player.core
-    .CreatePlayer('asciinema-iso-browser', 'asciinema/colors.json', getOpts(20, 1, 'solarized-light'))
-  asciinema_player.core
-    .CreatePlayer('asciinema-iso-server', 'asciinema/colors.json', getOpts(20, 1))
 })()

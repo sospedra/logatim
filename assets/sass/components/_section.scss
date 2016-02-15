@@ -17,10 +17,11 @@
 	}
 
 	section#demo .terminal {
-		width: 100%;
+		width: 60%;
 		background-color: #ddd;
 		border-radius: 3px;
 		padding: 0;
+		margin: 0 auto;
 
 		.fake-controllers {
 			line-height: 11px;
@@ -35,7 +36,8 @@
 	header {
 		p {
 			position: relative;
-			margin: 0 0 (_size(element-margin) * 0.75) 0;
+			font-size: 1.25em;
+			margin: 0 0 .5em;
 
 			// Small.
 				@include breakpoint(small) {
