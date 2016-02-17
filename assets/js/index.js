@@ -12,5 +12,11 @@ require('./main')
 
 // load the iframe when everything else is done
 $(window).bind('load', () => {
-  $('#js-terminal').attr('src', 'http://services-82a9dfb1-0ca9-4723-a599-c797ef8f78c0.runnablecodesnippets.com/static/term.html')
+  var sandbox = 'http://services-82a9dfb1-0ca9-4723-a599-c797ef8f78c0.runnablecodesnippets.com/static/term.html'
+  $('#js-terminal').attr('src', sandbox)
+
+  $('#js-terminal').load((e) => {
+    window.focus()
+  })
+
 })

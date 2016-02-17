@@ -4,6 +4,12 @@
 		<title>Logatim</title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Icons -->
+		<link rel="apple-touch-icon-precomposed" href="images/favicon-152.png">
+		<meta name="msapplication-TileColor" content="#86314e">
+		<meta name="msapplication-TileImage" content="/images/favicon-152.png">
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="css/bundle.css" />
@@ -59,7 +65,9 @@
 					<div class="content">
 						<h3>Log using levels</h3>
 						<p>
-							Log and log and log and logging again.
+							Control what's outputed in your app. Set the log level programatically
+							and print exactly what you need in every moment. Logatim implements
+							the 5 primary levels: silent, debug, info, warn and error.
 						</p>
 					</div>
 				</section>
@@ -68,7 +76,10 @@
 					<div class="content">
 						<h3>For the server and the client</h3>
 						<p>
-							Isomorphism motherfuckers!
+							Learn once, implement multiple times! Logatim is isomorphic so it can run
+							over node or on the client side without any change, config making or
+							dependency. The official bundles includes the following dependency injection
+							patterns: umd, amd, commonjs and var.
 						</p>
 					</div>
 					<div class="demo-holder">
@@ -98,22 +109,11 @@
 		<section id="demo" class="wrapper style2 special">
 			<header class="major">
 				<h2>Try our demo now!</h2>
-				<p>You can try it right now in the <strong>embedded console below</strong>,</p>
-				<p>on the <strong>browser console</strong> of this website</p>
+				<p>You can try it right now on the <strong>browser console</strong> of this website</p>
 				<p>or in the <strong><a href="http://code.runnable.com/VrCg6ISZBxFE6SMu/a-logatim-server-side-sandbox-for-node-js-logger-terminal-colors-and-levels" target="_blank">
 					offical Logatim sandbox</strong> hosted at Runnable
 				</a></p>
 			</header>
-			<section>
-				<div class="terminal">
-					<span class="fake-controllers">
-						<i class="red"></i>
-						<i class="yellow"></i>
-						<i class="green"></i>
-					</span>
-					<iframe id="js-terminal" src=""></iframe>
-				</div>
-			</section>
 		</section>
 
 		<!-- Footer -->
@@ -128,6 +128,17 @@
 
 		<!-- Scripts -->
 		<!--[if lte IE 8]><script src="js/respond.min.js"></script><![endif]-->
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-71266652-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
 		<script src="js/asciinema-player.js"></script>
 		<script src="js/app.min.js"></script>
 	</body>
