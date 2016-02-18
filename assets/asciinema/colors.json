@@ -2,7 +2,7 @@
   "version": 1,
   "width": 127,
   "height": 33,
-    "duration": 45.3,
+  "duration": 45.3,
   "command": "node",
   "title": "Logatim colors",
   "env": {
