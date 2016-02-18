@@ -54,5 +54,18 @@ module.exports = (function () {
 					speed: 1500
 				});
 
+		// Add waypoints
+		$('#js-iso').waypoint({
+			offset: 'bottom-in-view',
+		  handler: function (direction) {
+				$('#js-iso .browser').addClass('fadeInDown').show()
+				$('#js-iso .node').addClass('fadeInUp').show()
+
+				setTimeout(function () {
+					$('#js-iso .intersec').addClass('fadeIn').show()
+				}, 1000)
+		  }
+		})
+
 	})
 })()

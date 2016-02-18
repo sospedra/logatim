@@ -1,6 +1,6 @@
-/*! jQuery UI - v1.11.4 - 2016-02-08
-* http://jqueryui.com
-* Copyright jQuery Foundation and other contributors; Licensed MIT */
+// jQuery UI - v1.11.4 - 2016-02-08
+// http://jqueryui.com
+// Copyright jQuery Foundation and other contributors; Licensed MIT
 
 .ui-helper-hidden {
   display: none;
@@ -29,6 +29,7 @@
 }
 
 .ui-helper-clearfix {
+  min-height: 0;
   &:before {
     content: "";
     display: table;
@@ -40,7 +41,6 @@
     border-collapse: collapse;
     clear: both;
   }
-  min-height: 0;
 }
 
 .ui-helper-zfix {

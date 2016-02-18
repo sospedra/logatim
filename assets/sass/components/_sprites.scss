@@ -1,0 +1,42 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
+.demo.iso {
+  background-color: transparent;
+  height: 380px;
+
+  .iso_sprite {
+    height: 60%;
+    position: absolute;
+    width: 100%;
+    animation-duration: 1s;
+    display: none;
+
+    &.browser {
+      background-image: url('../images/browser.svg');
+  		background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+
+    &.node {
+      background-image: url('../images/node.svg');
+  		background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      bottom: 0;
+    }
+
+    &.intersec {
+      background-image: url('../images/intersec.svg');
+  		background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      z-index: 9;
+      height: 22%;
+      top: 39%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="401px" height="200px" viewBox="0 0 401 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>logatim</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M400.073188,100 C354.462872,160.722335 281.845771,200 200.054879,200 C118.263988,200 45.6468862,160.722335 0.0365697602,100 C45.646884,39.2776661 118.263986,0 200.054879,0 C281.845772,0 354.462874,39.2776661 400.073191,100.000003 L400.073188,100 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <mask id="mask-2" sketch:name="Mask" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#3E2764" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+        <text id="Logatim" sketch:type="MSTextLayer" mask="url(#mask-2)" font-family="Source Code Pro" font-size="64" font-weight="526" sketch:alignment="middle" fill="#FFFFFF">
+            <tspan x="65.6548802" y="116.096">Logatim</tspan>
+        </text>
+    </g>
+</svg>

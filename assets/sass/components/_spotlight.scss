@@ -11,7 +11,7 @@
 /* Spotlight */
 
 	// jquery resizable hack
-	.spotlight[data-benefit="levels"] .demo[style] {
+	.spotlight[data-benefit="isomorphic"] .demo[style] {
 		left: 0 !important;
 	}
 
@@ -56,6 +56,10 @@
 
 			.asciinema-player {
 				vertical-align: bottom;
+			}
+
+			.asciinema-terminal {
+				overflow: auto;
 			}
 
 			img {
@@ -120,72 +124,3 @@
 			}
 
 	}
-
-// ismorphism
-.spotlight[data-benefit="isomorphic"] {
-	display: block;
-	text-align: center;
-
-	.content, .demo-holder {
-		width: 100%;
-	}
-
-	.demo-holder {
-		position: relative;
-		margin-top: 1em;
-
-		&:after {
-	    content: "";
-	    display: table;
-	    clear: both;
-		}
-	}
-
-	.demo {
-		margin: 0 auto;
-
-		&.server {
-			float: left;
-			z-index: 99;
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-			overflow: visible;
-		}
-
-		&.server[style] {
-			height: auto !important;
-			min-width: 30%;
-		}
-
-		&.browser {
-			width: auto;
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-	}
-
-	#resize-cursor {
-		background-color: #ffc700;
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: calc(100% + 6px);
-		margin-top: -3px;
-		width: 6px;
-		cursor: col-resize;
-		border-radius: 4px;
-		z-index: 999;
-
-		&:after {
-			content: "";
-			width: 20px;
-			height: 20px;
-			position: absolute;
-			right: calc(50% - 10px);
-			top: calc(50% - 10px);
-			border-radius: 50%;
-			background-color: #333;
-			border: 6px solid #ffc700;
-		}
-	}
-}

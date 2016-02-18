@@ -1,38 +1,92 @@
 const $ = require('jquery')
+const MutationObserver = window.MutationObserver || window.WebKitMutationObserver
+const terminals = ['colors', 'levels']
+
+// return the asciinema player options
+const getOpts = function (theme) {
+  return {
+    height: 15,
+    loop: 1,
+    // autoPlay: autoPlay || 1,
+    theme: theme || 'monokai'
+  }
+}
+
+// make the spotlight demos resizable
+const allowResize = function () {
+  $('.spotlight[data-benefit="colors"] .demo').resizable({ handles: 'e' })
+  $('.spotlight[data-benefit="levels"] .demo').resizable({ handles: 'w' })
+}
+
+const loadPlayer = function (terminal) {
+  // load the asciinema videos into the demos
+  var opts = terminal === 'iso-browser' ? getOpts('solarized-light') : getOpts()
+  var name = ['asciinema-', terminal].join('')
+  var path = ['asciinema/', terminal, '.json'].join('')
+
+  asciinema_player.core.CreatePlayer(name, path, opts)
+}
+
+// listen appendings for auto scrolling
+const stalk = function (terminal) {
+  var selector = ['#asciinema-', terminal, ' .asciinema-terminal'].join('')
+  var element = document.querySelector(selector) // observe need DOM elements
+  var $element = $(element)
+  var prevY = -1
+  var prevX = -1
+  var terminalHeight = parseInt(element.style.height)
+  var terminalWidth = parseInt(element.parentNode.offsetWidth) - 10
+
+  var stalker = new MutationObserver(function (mutations, observer) {
+    var current = mutations[0].target
+    var isValid = !['line', 'asciinema-terminal'].indexOf(current.parentNode.className)
+    var realTop = current.offsetTop + current.offsetHeight
+    var targetY = realTop - terminalHeight
+    var targetX = (current.offsetWidth - terminalWidth) + 10
+
+    // scroll Y
+    if (targetY !== prevY && isValid) {
+      // let Y axis to output multiple lines
+      if (targetY < 0) targetY = 0
+
+      // update the prev scoll target
+      prevY = targetY
+
+      $element.scrollTo(targetY, {
+        axis: 'y',
+        duration: targetY > prevY ? 500 : 0
+      })
+    }
+
+    // scroll x
+    if (targetX > 0 && targetX !== prevX && isValid) {
+      prevX = targetX
+
+      $element.scrollTo(targetX, {
+        axis: 'x',
+        duration: 0
+      })
+    }
+
+    // reset X
+    if (prevX > 0 && targetX < prevX) {
+      prevX = -1
+      $element.scrollTo(0, { axis: 'x' })
+    }
+  })
+
+  stalker.observe(element, {
+    childList: true,
+    subtree: true
+  })
+}
 
 module.exports = (function () {
-  var getOpts = function (poster, autoPlay, theme) {
-    return {
-      height: 15,
-      loop: 1,
-      poster: poster || 1,
-      autoPlay: autoPlay || 0,
-      theme: theme || 'asciinema'
-    }
-  }
 
-  // load the asciinema videos into the demos
-  asciinema_player.core
-    .CreatePlayer('asciinema-colors', 'asciinema/colors.json', getOpts(20, 0))
-  asciinema_player.core
-    .CreatePlayer('asciinema-levels', 'asciinema/colors.json', getOpts(20, 0))
-  asciinema_player.core
-    .CreatePlayer('asciinema-iso-browser', 'asciinema/colors.json', getOpts(20, 1, 'solarized-light'))
-  asciinema_player.core
-    .CreatePlayer('asciinema-iso-server', 'asciinema/colors.json', getOpts(20, 1))
+  allowResize()
 
-  // make the spotlight demos resizable
-  $('.spotlight[data-benefit="colors"] .demo').resizable({
-    handles: 'e'
-  })
-
-  $('.spotlight[data-benefit="levels"] .demo').resizable({
-    handles: 'w'
-  })
-
-  $('.spotlight[data-benefit="isomorphic"] .demo.server').resizable({
-    handles: {
-      'e': '#resize-cursor'
-    }
+  terminals.forEach(function (terminal) {
+    loadPlayer(terminal)
+    stalk(terminal)
   })
 })()

@@ -1,10 +1,7 @@
-/*! jQuery UI - v1.11.4 - 2016-02-08
-* http://jqueryui.com
-* Includes: core.css, resizable.css
-* Copyright jQuery Foundation and other contributors; Licensed MIT */
-
-/* Layout helpers
-----------------------------------*/
+// jQuery UI - v1.11.4 - 2016-02-08
+// http://jqueryui.com
+// Includes: core.css, resizable.css
+// Copyright jQuery Foundation and other contributors; Licensed MIT
 
 .ui-helper-hidden {
   display: none;
@@ -45,7 +42,7 @@
     clear: both;
   }
   min-height: 0;
-  /* support: IE7 */
+
 }
 
 .ui-helper-zfix {
@@ -56,24 +53,19 @@
   position: absolute;
   opacity: 0;
   filter: Alpha(Opacity = 0);
-  /* support: IE8 */
+
 }
 
 .ui-front {
   z-index: 100;
 }
 
-/* Interaction Cues
-----------------------------------*/
 
 .ui-state-disabled {
   cursor: default !important;
 }
 
-/* Icons
-----------------------------------*/
 
-/* states and images */
 
 .ui-icon {
   display: block;
@@ -81,11 +73,6 @@
   overflow: hidden;
   background-repeat: no-repeat;
 }
-
-/* Misc visuals
-----------------------------------*/
-
-/* Overlays */
 
 .ui-widget-overlay {
   position: fixed;
