@@ -16,7 +16,7 @@
     "cp:vendor": "copyfiles -f assets/js/vendor/* public/js/",
     "cp:asciinema": "copyfiles -f assets/asciinema/* public/asciinema/",
     "cp:ie": "copyfiles -f assets/js/ie/* public/js/ie/",
-    "cp:favicon": "copyfiles -f images/favicon.ico public/",
+    "cp:favicon": "copyfiles -f assets/images/favicon.ico public/",
     "watch:html": "nodemon -e html -i public -x 'npm run html'",
     "watch:js": "nodemon -w assets/js/ -x 'npm run js'",
     "watch:images": "nodemon -w assets/images -x 'npm run images'",

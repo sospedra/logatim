@@ -1,4 +1,5 @@
 const $ = require('jquery')
+const logatim = require('logatim')
 
 module.exports = (function () {
 
@@ -66,6 +67,11 @@ module.exports = (function () {
 				}, 1000)
 		  }
 		})
+
+		// Inject logatim
+		logatim.setLevel('info')
+
+		window.logatim = logatim
 
 	})
 })()

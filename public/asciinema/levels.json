@@ -2,6 +2,7 @@
   "version": 1,
   "width": 127,
   "height": 34,
+  "duration": 60.35,
   "command": "node",
   "title": "",
   "env": {

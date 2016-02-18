@@ -1,7 +1,4 @@
-window.logatim = require('logatim')
 window.$ = window.jQuery = require('jquery')
-
-logatim.setLevel('info')
 
 require('jquery.scrollto')
 require('jquery-ui/resizable')
