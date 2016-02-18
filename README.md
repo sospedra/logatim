@@ -92,6 +92,8 @@ logatim.info("I'm a boring log")
 
 * The **sets** available are: bold, dim, italic, underline, blink, inverse, hidden, strikethrough (*Almost no browser [supports blink](https://developer.mozilla.org/en/docs/Web/CSS/text-decoration#Browser_compatibility) and inverse is not supported when printing on the browser's console*).
 
+[![asciicast](https://asciinema.org/a/4g8spo2k928hblcuzmhlyrxru.png)](https://asciinema.org/a/4g8spo2k928hblcuzmhlyrxru)
+
 ### Levels
 * Use the five `console` native **logging methods** (aka levels):
 ```es6
@@ -119,6 +121,7 @@ logatim.debug("I'll be printed") // because debug is greater than info
 
 * Leveling also ensures that **your logs don't break anything**, even if there's not a `console` object (I'm staring at you IE) it will silent fallback to the safest print possible.
 
+[![asciicast](https://asciinema.org/a/74ohjtrbcx007w3xoaflr6sk9.png)](https://asciinema.org/a/74ohjtrbcx007w3xoaflr6sk9)
 
 ## Contributing
 
