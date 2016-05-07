@@ -3,14 +3,14 @@
   "description": "Isomorphic logger which implements log levels and ANSI styles",
   "main": "dist/logatim.umd.min.js",
   "scripts": {
-    "tryout": "webpack --config tryout.config.js",
-    "start": "npm run tryout -- --debug && node-repl demo/logatim.tryout.js",
+    "playground": "webpack --config demo.config.js",
+    "start": "npm run playground -- --debug && node-repl demo/bundle.js",
     "test": "tap test/test-*.js -R spec",
     "posttest": "npm run standard",
     "test-ci": "COVERALLS_REPO_TOKEN=aZSRN0p0eQPw5sMOpQPcS5NaHjSyGlIwB tap test/test-*.js --cov",
     "standard": "standard --verbose | snazzy",
     "build": "webpack -p && npm run test-ci",
-    "demo": "npm run tryout -- --watch & open demo/tryout.html",
+    "demo": "npm run playground -- --watch & open demo/playground.html",
     "push": "npm test && npm run build && git add -A && git cz && git push",
     "changelog": "changelog edravis/logatim all -m > CHANGELOG.md",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
