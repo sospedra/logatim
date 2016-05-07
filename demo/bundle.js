@@ -63,7 +63,9 @@ var logatim =
 	var currentLevel = constants.DEFAULT_LEVEL;
 
 	var logatim = module.exports = function (str) {
-	  if (str) logs.addChunk({ key: 'str', val: str });
+	  if (str && typeof str === 'string') {
+	    logs.addChunk({ key: 'str', val: str });
+	  }
 
 	  var speaker = function speaker(message) {
 	    return logatim(message);
@@ -91,6 +93,7 @@ var logatim =
 	    Object.defineProperty(speaker, styleName, {
 	      get: function get() {
 	        logs.addChunk({ key: 'style', val: styleName });
+
 	        return logatim();
 	      }
 	    });
@@ -253,8 +256,7 @@ var logatim =
 	var chunking = [];
 
 	var reset = function reset(logatim) {
-	  chunking = [];
-	  return logatim();
+	  return chunking = [];
 	};
 
 	var log = function log(level, isNode, logatim) {
@@ -345,7 +347,8 @@ var logatim =
 
 	logs.raw = function (isNode, message) {
 	  var currentRaw = buildOutput(message, isNode);
-	  chunking = [];
+
+	  reset();
 
 	  return currentRaw;
 	};
