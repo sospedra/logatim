@@ -18,6 +18,7 @@ If you're excited about this and want to try it right now you have 2 options:
 
 1. Copy the [dist/logatim.umd.min.js](dist/logatim.umd.min.js) and paste it on the browser console.
 2. Access to our [official sandbox at Runnable](http://code.runnable.com/VrCg6ISZBxFE6SMu/).
+3. Go to the [Logatim website](http://sospedra.github.io/logatim/) and open the console :)
 
 ## Why?
 I've been coding for a long time and I've always feel that we need a better approach to the logging issue. I've researched a lot about the available logger modules and I've even run a [questionary](https://docs.google.com/forms/d/10cZEXVc7aA29JBjoJFsTnTd8tf-RxrwlgusZrg9HW90) about this topic. After this inquiry I think that **the most suitable logger should combines these six elemental features**:
@@ -96,19 +97,17 @@ logatim.info("I'm a boring log")
 
 ### Levels
 * Use the five `console` native **logging methods** (aka levels):
+
 ```es6
 const logatim = require('logatim')
 
 // sorted from bottom in the bubbling logging scale
 logatim.trace('Good for track pathways')
 logatim.info('Good while developing')
-
-// combine them, each log may differ depending on the channel
-logatim
-  .debug('Good for find errors')
-  .warn('Good for production')
-  .error('Good for performance')
 ```
+
+**Note that the log methods are end-like functions. Therefore they are not returning a Logatim instance, so they're not chainable.**
+
 * And change the **current level** using the get/set methods:
 ```es6
 const logatim = require('logatim')
