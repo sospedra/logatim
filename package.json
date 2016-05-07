@@ -6,7 +6,7 @@
     "start": "node index.js",
     "test": "node_modules/.bin/tap test/test-*.js -R spec",
     "posttest": "npm run standard",
-    "test-ci": "COVERALLS_REPO_TOKEN=XmHs8an1FvzAdfxAf81kEPQDFnpJ4j4mw node_modules/.bin/tap test/test-*.js --cov",
+    "test-ci": "COVERALLS_REPO_TOKEN=aZSRN0p0eQPw5sMOpQPcS5NaHjSyGlIwB node_modules/.bin/tap test/test-*.js --cov",
     "standard": "node_modules/.bin/standard --verbose | node_modules/.bin/snazzy",
     "build": "node_modules/.bin/webpack -p && npm run test-ci",
     "push": "npm test && npm run build && git add -A && git cz && git push",
