@@ -256,7 +256,7 @@ var logatim =
 	var chunking = [];
 
 	var reset = function reset(logatim) {
-	  return chunking = [];
+	  chunking = [];
 	};
 
 	var log = function log(level, isNode, logatim) {
