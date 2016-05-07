@@ -28,8 +28,8 @@
     "open": "0.0.5",
     "parallel-webpack": "^1.0.0",
     "semantic-release": "^4.3.5",
-    "snazzy": "^2.0.1",
-    "standard": "^5.4.1",
+    "snazzy": "^4.0.0",
+    "standard": "^7.0.1",
     "tap": "^5.4.2",
     "webpack": "^1.12.9"
   },
