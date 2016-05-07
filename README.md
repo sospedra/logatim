@@ -106,9 +106,10 @@ logatim.trace('Good for track pathways')
 logatim.info('Good while developing')
 ```
 
-**Note that the log methods are end-like functions. Therefore they are not returning a Logatim instance, so they're not chainable.**
+> **Note that the log methods are end-like functions. Therefore they are not returning a Logatim instance, so they're not chainable.**
 
 * And change the **current level** using the get/set methods:
+
 ```es6
 const logatim = require('logatim')
 
