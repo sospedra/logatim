@@ -1,6 +1,25 @@
+2016-05-07
+==========
+
+  * feat(): Remove detect-node dep
+    [#19](https://github.com/edravis/logatim/issues/19)
+
+2016-02-18
+==========
+
+  * docs: Add asciinema links to README
+
+2016-02-17
+==========
+
+  * perf: Override speaker.inspect
+    Avoid polluting the REPL or the generics outputs with the echoes of the speaker function properties
+
 2016-02-02
 ==========
 
+  * docs: Add a line break to proper format the markdown at Github
+  * docs: Add demo to the README.md and update the changelog
   * Merge branch 'master' of https://github.com/edravis/logatim
   * fix: When leveling the logatim variable become undefined. Now it's strongly binded.
   * Merge pull request [#16](https://github.com/edravis/logatim/issues/16) from eanplatter/master
