@@ -1,6 +1,20 @@
+2016-05-08
+==========
+
+  * refactor: Arrow functions shouldn't return assignments
+  * perf: Log methods are end-like functions
+    Therefore, they're not returning Logatim instances anymore
+    fix [#20](https://github.com/edravis/logatim/issues/20)
+
 2016-05-07
 ==========
 
+  * refactor: update dev deps
+  * chore: change tryout to playground to meet the standard ignore files defaults
+  * refactor: add node-repl and clean package.json scripts
+  * feat: add tryout mode
+  * style: Update changelog
+  * style: Update from Edravis to Sospedra username
   * feat(): Remove detect-node dep
     [#19](https://github.com/edravis/logatim/issues/19)
 
