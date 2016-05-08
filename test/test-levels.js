@@ -70,3 +70,16 @@ test('log methods are end-like functions', function (t) {
   t.equal(logatim.debug(), undefined, '.debug() is not chainable')
   t.equal(logatim.trace(), undefined, '.trace() is not chainable')
 })
+
+test('setLevel can be shared among app files', function (t) {
+  t.plan(2)
+
+  // try inside another scope but same file
+  logatim.setLevel('error')
+  ;(function isolated () {
+    t.equal(logatim.getLevel(), 'ERROR', 'setLevel persist in the same file')
+  })()
+
+  // try in another file and it persists
+  require('./levels-prime.js').isError(t)
+})
