@@ -255,7 +255,7 @@ var logatim =
 
 	var chunking = [];
 
-	var reset = function reset(logatim) {
+	var reset = function reset() {
 	  chunking = [];
 	};
 
@@ -265,7 +265,7 @@ var logatim =
 
 	  isNode ? console[level](output) : console[level].apply(console, output);
 
-	  return reset(logatim);
+	  return reset();
 	};
 
 	var buildOutput = function buildOutput(message, isNode) {
@@ -356,7 +356,7 @@ var logatim =
 	logs.updateLogMethods = function (speaker, currentLevel, isNode, logatim) {
 	  constants.LEVELS_KEYS.forEach(function (level, idx) {
 	    level = level.toLowerCase();idx >= currentLevel ? speaker[level] = log.bind(null, level, isNode, logatim) : speaker[level] = function noop() {
-	      return reset(logatim);
+	      return reset();
 	    };
 	  });
 	};

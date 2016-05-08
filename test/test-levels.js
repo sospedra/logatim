@@ -44,7 +44,29 @@ test('switch levels operations', function (t) {
     logatim.info('IGNORE: reply')
 
     t.pass('can level without breaking')
-  } catch (e) {
-    t.fail(e)
-  }
+  } catch (ex) { t.fail(ex) }
+})
+
+test('debug works in node env', function (t) {
+  t.plan(1)
+
+  logatim.setLevel('debug')
+
+  try {
+    logatim.debug()
+
+    t.pass('can use debug function in node')
+  } catch (ex) { t.fail(ex) }
+})
+
+test('log methods are end-like functions', function (t) {
+  t.plan(5)
+
+  logatim.setLevel(0)
+
+  t.equal(logatim.error(), undefined, '.error() is not chainable')
+  t.equal(logatim.warn(), undefined, '.warn() is not chainable')
+  t.equal(logatim.info(), undefined, '.info() is not chainable')
+  t.equal(logatim.debug(), undefined, '.debug() is not chainable')
+  t.equal(logatim.trace(), undefined, '.trace() is not chainable')
 })
