@@ -1,6 +1,14 @@
 2016-05-08
 ==========
 
+  * chore: Add demo/bundle.js to .gitignore
+  * chore: Remove demo/bundle.js from the repo
+  * test: Add tests for end-like log methods
+  * chore: Add codeclimate.yml ignoring dist and demo
+  * fixup! docs: Highlight the last breaking release
+  * docs: Highlight the last breaking release
+  * docs: Update README.md with breaking release info
+  * docs: Update changelog
   * refactor: Arrow functions shouldn't return assignments
   * perf: Log methods are end-like functions
     Therefore, they're not returning Logatim instances anymore
