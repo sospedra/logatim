@@ -11,7 +11,7 @@
     "standard": "standard --verbose | snazzy",
     "build": "webpack -p && npm run test-ci",
     "demo": "npm run playground -- --watch & open demo/playground.html",
-    "push": "npm test && npm run build && git add -A && git cz && git push",
+    "push": "npm test && npm run build && git add -A && git cz && git push origin HEAD",
     "changelog": "changelog edravis/logatim all -m > CHANGELOG.md",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
