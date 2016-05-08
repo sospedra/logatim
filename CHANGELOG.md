@@ -1,6 +1,16 @@
+2016-05-09
+==========
+
+  * Merge branch 'console-fallback'
+  * feat: Add fallback for console log undefined methods
+
 2016-05-08
 ==========
 
+  * Merge branch 'persist-set-level'
+  * chore: Update npm run push script
+  * feat: Update changelog and push 0.6.0 release files
+  * feat: Persist levels among app files (isomorphic)
   * chore: Add demo/bundle.js to .gitignore
   * chore: Remove demo/bundle.js from the repo
   * test: Add tests for end-like log methods
