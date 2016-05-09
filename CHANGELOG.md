@@ -1,6 +1,16 @@
+2016-05-10
+==========
+
+  * fix: Add casting for messages containing objects
+  * fix: Cast objects to string
+    So the whole object will be printed out
+  * fix: Print all kind of objects including error exceptions
+
 2016-05-09
 ==========
 
+  * docs: Update changelog
+    fix [#2](https://github.com/edravis/logatim/issues/2)
   * Merge branch 'console-fallback'
   * feat: Add fallback for console log undefined methods
 
