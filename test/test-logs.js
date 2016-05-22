@@ -28,7 +28,9 @@ const dummies = {
         'loga': ['t', 'i', 'm']
       }
     ]}
-  }
+  },
+  simpleFunction: 'Valar morghulis\u001b[49m\u001b[0m',
+  composeFunction: '\u001b[1m[PREFIX 50] \u001b[34mValar dohaeris\u001b[49m\u001b[0m'
 }
 
 const getDummy = (key) => {
@@ -52,3 +54,14 @@ test('can print objects', function (t) {
 })
 
 // use custom functions
+test('can use functions as output', function (t) {
+  t.plan(2)
+
+  var simple = logatim.raw(function () { return 'Valar morghulis ' })
+  var compose = logatim
+    .bold(function () { return '[PREFIX ' + (13 + 37) + '] ' })
+    .blue.raw('Valar dohaeris')
+
+  t.equal(simple, dummies.simpleFunction, ' straight from the print function')
+  t.equal(compose, dummies.composeFunction, ' concatenating different chunks')
+})
