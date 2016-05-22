@@ -1,6 +1,14 @@
+2016-05-22
+==========
+
+  * refactor(release): Compile dist for new release
+  * feat: Can use functions straight/composing for printing instead of strings
+  * chore: Add .DS_Store to gitignore
+
 2016-05-10
 ==========
 
+  * docs: Update changelog
   * fix: Add casting for messages containing objects
   * fix: Cast objects to string
     So the whole object will be printed out
